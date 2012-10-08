@@ -7,12 +7,21 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # folders
+alias dc="cd ~/Documents"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
 
 # commands
 alias g="git"
+
+# grunt
 alias gr="grunt"
 alias grb="grunt build"
 alias grw="grunt watch"
+
+# chocolatey
+alias cinst='cmd.exe "/c cinst.bat"'
+alias clist='cmd.exe "/c clist.bat"'
+alias cup='cmd.exe "/c cup.bat"'
+alias cuninst='cmd.exe "/c cuninst.bat"'
