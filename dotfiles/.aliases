@@ -1,0 +1,18 @@
+# navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# folders
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/Projects"
+
+# commands
+alias g="git"
+alias gr="grunt"
+alias grb="grunt build"
+alias grw="grunt watch"
