@@ -17,7 +17,7 @@ Then, create a symlink by launching an instance of cmd as administrator and typi
 MKLINK /D %HOMEPATH%\dotfiles %HOMEPATH%\Documents\GitHub\dotfiles
 ```
 
-Finally, add this line into your .bashrc (it should be in your home folder, create if if necessary).
+Finally, add this line into your .bashrc (it should be in your home folder, create if necessary).
 ```bash
 [ -n "$PS1" ] && source ~/dotfiles/.bash_profile
 ```
