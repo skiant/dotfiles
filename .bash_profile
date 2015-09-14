@@ -3,14 +3,10 @@ for file in ~/dotfiles/.{aliases,functions,ssh_agent}; do
 done
 unset file
 
-for file in ~/dotfiles/completion/{git,git_flow,ssh}.completion.bash; do
+for file in ~/dotfiles/completion/{git,git-prompt,git_flow,ssh}.completion.bash; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
-
-
-
-
 
 txtblk='\e[0;30m' # Black - Regular
 txtred='\e[0;31m' # Red
@@ -50,4 +46,7 @@ function parse_git_branch {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-PS1="\n\[$txtgrn\]\u\[$txtrst\]@\[$txtylw\]\h\[$txtrst\] \[$txtpur\]\W\[$txtrst\] \[$txtcyn\]\$(parse_git_branch)\[$txtrst\] \n$ "
+PS1="\n\[$txtgrn\]\u\[$txtrst\]@"
+PS1+="\[$txtylw\]\h\[$txtrst\] "
+PS1+="\[$txtpur\]\W\[$txtrst\]"
+PS1+='\['$txtcyn'\]$(__git_ps1 " (%s)")\['$txtrst'\] \$ '
