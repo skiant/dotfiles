@@ -15,11 +15,17 @@ alias p="cd ~/Projects"
 # commands
 alias g="git"
 alias subl="/c/Program\ Files/Sublime\ Text\ 2/sublime_text.exe"
+alias at="atom"
 
 # grunt
 alias gr="grunt"
 alias grb="grunt build"
 alias grw="grunt watch"
+
+# gulp
+alias gl="gulp"
+alias glb="gulp build"
+alias glw="gulp watch"
 
 # chocolatey
 alias cinst='cmd.exe "/c cinst.bat"'
