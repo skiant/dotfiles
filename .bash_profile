@@ -1,12 +1,31 @@
-for file in ~/dotfiles/.{aliases,functions,ssh_agent}; do
+for file in ~/dotfiles/.{kpz,aliases,functions,ssh_agent}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
 
-for file in ~/dotfiles/completion/{git,git-prompt,git_flow,ssh}.completion.bash; do
+# Completions
+for file in ~/dotfiles/completion/*.completion.bash; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
+
+# Prompt functions
+for file in ~/dotfiles/prompt/*.prompt.bash; do
+	[ -r "$file" ] && source "$file"
+done
+unset file
+
+# Machine-specific files
+for file in ~/dotfiles/local/*.bash; do
+  [ -r "$file" ] && source "$file"
+done
+unset file
+
+
+if hash thefuck 2>/dev/null; then
+  eval "$(thefuck --alias)"
+fi
+
 
 txtblk='\e[0;30m' # Black - Regular
 txtred='\e[0;31m' # Red
@@ -42,11 +61,16 @@ bakcyn='\e[46m'   # Cyan
 bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
-function parse_git_branch {
-	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
 
-PS1="\n\[$txtgrn\]\u\[$txtrst\]@"
-PS1+="\[$txtylw\]\h\[$txtrst\] "
-PS1+="\[$txtpur\]\W\[$txtrst\]"
-PS1+='\['$txtcyn'\]$(__git_ps1 " (%s)")\['$txtrst'\] \$ '
+
+PS1="\n\[$txtgrn\]\u\[$txtrst\]@" # username
+PS1+="\[$txtylw\]\h\[$txtrst\] " # host
+PS1+="\[$txtpur\]\W\[$txtrst\] " # working directory
+PS1+='\['$txtcyn'\]$(__git_ps1 " (%s)")\['$txtrst'\]' # git branch
+PS1+='\['$txtgrn'\]$(nvm_current)\['$txtrst'\]' # nvm
+PS1+=' \$ ' # Dollar Sign
+
+# wow much terminal
+if hash doge 2>/dev/null; then
+  doge
+fi
