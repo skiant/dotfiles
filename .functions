@@ -10,5 +10,12 @@ function n() {
 
 # Open a twitch stream with Livestreamer
 function lst() {
-  livestreamer twitch.tv/"$@" best
+  if [ "$2" ]
+  then
+    quality=$2
+  else
+    quality="best"
+  fi
+
+  livestreamer twitch.tv/"$1" "$quality"
 }
