@@ -1,4 +1,4 @@
-for file in ~/dotfiles/.{kpz,aliases,functions,ssh_agent}; do
+for file in ~/dotfiles/.{aliases,functions,ssh_agent}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
@@ -26,6 +26,10 @@ if hash thefuck 2>/dev/null; then
   eval "$(thefuck --alias)"
 fi
 
+# wow much terminal
+if hash doge 2>/dev/null; then
+  doge
+fi
 
 txtblk='\e[0;30m' # Black - Regular
 txtred='\e[0;31m' # Red
@@ -61,16 +65,9 @@ bakcyn='\e[46m'   # Cyan
 bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
-
-
 PS1="\n\[$txtgrn\]\u\[$txtrst\]@" # username
 PS1+="\[$txtylw\]\h\[$txtrst\] " # host
 PS1+="\[$txtpur\]\W\[$txtrst\] " # working directory
 PS1+='\['$txtcyn'\]$(__git_ps1 " (%s)")\['$txtrst'\]' # git branch
 PS1+='\['$txtgrn'\]$(nvm_current)\['$txtrst'\]' # nvm
 PS1+=' \$ ' # Dollar Sign
-
-# wow much terminal
-if hash doge 2>/dev/null; then
-  doge
-fi
