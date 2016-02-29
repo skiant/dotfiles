@@ -32,3 +32,7 @@ alias cinst='cmd.exe "/c cinst.bat"'
 alias clist='cmd.exe "/c clist.bat"'
 alias cup='cmd.exe "/c cup.bat"'
 alias cuninst='cmd.exe "/c cuninst.bat"'
+
+# Atom
+alias at="atom ."
+alias atu="apm update --no-confirm"
