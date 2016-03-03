@@ -15,12 +15,16 @@ for file in ~/dotfiles/prompt/*.prompt.bash; do
 done
 unset file
 
+# bash-sensible
+if [ -f ~/dotfiles/bash-sensible/sensible.bash ]; then
+   source ~/dotfiles/bash-sensible/sensible.bash
+fi
+
 # Machine-specific files
 for file in ~/dotfiles/local/*.bash; do
   [ -r "$file" ] && source "$file"
 done
 unset file
-
 
 if hash thefuck 2>/dev/null; then
   eval "$(thefuck --alias)"
