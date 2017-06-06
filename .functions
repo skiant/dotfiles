@@ -12,5 +12,5 @@ function lst() {
     quality="best"
   fi
 
-  livestreamer twitch.tv/"$1" "$quality"
+  streamlink twitch.tv/"$1" "$quality"
 }
