@@ -3,11 +3,6 @@ function mkd() {
     mkdir -p "$@" && cd "$@"
 }
 
-# Change the current Node Version
-function n() {
-  nvm use "$@"
-}
-
 # Open a twitch stream with Livestreamer
 function lst() {
   if [ "$2" ]
